@@ -1,3 +1,4 @@
+import React from "react"
 import cabecalho from"./components/cabecalho"
 
 export default function App(){
