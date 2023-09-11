@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import {GrFormEdit as Editar} from "react-icons/gr";
+import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
 
 export default function Produtos() {
 
@@ -22,7 +23,8 @@ export default function Produtos() {
           <th>NOME</th>
           <th>DESCRIÇÃO</th>
           <th>PREÇO</th>
-          <th>EDITAR</th>       
+          <th>EDITAR</th>
+          <th>EXCLUIR</th>       
         </tr>
         </thead>
         <tbody>
@@ -33,8 +35,8 @@ export default function Produtos() {
                 <td style={estiloDasCelulas}>{item.nome}</td>
                 <td style={estiloDasCelulas}>{item.desc}</td>
                 <td style={estiloDasCelulas}>{item.valor}</td>
-                <td style={estiloDasCelulas}> <Link to=
-                {`/editar/produtos/${item.id}`}><Editar/></Link> </td>
+                <td style={estiloDasCelulas}> <Link to={`/editar/produtos/${item.id}`}><Editar/></Link> | <Link to=
+                {`/excluir/produtos/${item.id}`}><Excluir/></Link> </td>
             </tr>
           ))
         }
