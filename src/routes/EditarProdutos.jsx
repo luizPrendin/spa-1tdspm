@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom"
-import { useState } from "react";import {ListaProdutos} from"../components/ListaProdutos"
+import { useNavigate,useParams } from "react-router-dom"
+import { useState } from "react"
+import {ListaProdutos} from"../components/ListaProdutos"
 
 export default function EditarProdutos() {
 
@@ -7,6 +8,8 @@ export default function EditarProdutos() {
 
   //Recuperando o ID do produto selecionado com useParams()
   const {id} = useParams()
+
+  const navegar  = useNavigate();
 
   const produtoRecuperadoDaListaById = ListaProdutos.filter(item => item.id == id );
 
@@ -17,6 +20,31 @@ export default function EditarProdutos() {
     valor: produtoRecuperadoDaListaById[0].valor
   });
 
+  
+
+  const handleChange = (event)=>{
+
+      const {name,value} = event.target;
+      setProduto({...produto,[name]:value})
+
+  }
+
+  const handleSubmit =(event)=>{
+    event.preventDefault();
+
+    let indice
+    ListaProdutos.forEach((item,index)=>{
+      if(item.id == produto.id){
+          indice = index
+      }
+      
+    })
+    
+    ListaProdutos.splice(indice,1,produto)
+    navegar("/produtos")
+
+  }
+
   return (
     <div>
       <h1>
@@ -24,20 +52,23 @@ export default function EditarProdutos() {
       </h1>
 
       <div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <fieldset>
               <legend>PRODUTO SELECIONADO</legend>
               <div>
+                <input type="hidden" name="id" value={produto.id} />
+              </div>
+              <div>
                 <label htmlFor="idNome">Nome do Produto:</label>
-                <input type="text" name="nome" id="idNome" defaultValue={produto.nome}/>
+                <input type="text" name="nome" id="idNome" value={produto.nome} onChange={handleChange}/>
               </div>
               <div>
                 <label htmlFor="idDesc">Descrição do Produto:</label>
-                <input type="text" name="desc" id="idDesc" defaultValue={produto.desc}/>
+                <input type="text" name="desc" id="idDesc" value={produto.desc} onChange={handleChange}/>
               </div>
               <div>
                 <label htmlFor="idValor">Valor do Produto:</label>
-                <input type="text" name="valor" id="idValor" defaultValue={produto.valor}/>
+                <input type="text" name="valor" id="idValor" value={produto.valor} onChange={handleChange}/>
               </div>
               <div>
                 <button>EDITAR</button>
