@@ -7,7 +7,7 @@ import Rodape from "./components/Rodape";
 export default function App() {
   return (
     <>
-      <div className="container">
+      <div>
         {/* Isso é um comentário */}
 
         {/* Vamos criar uma cabeçalho com um header, um h1 com um título e uma lista ul com 3 item com link. */}
