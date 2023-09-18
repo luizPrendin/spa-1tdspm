@@ -19,5 +19,5 @@ export default function App() {
         {/* Vamos criar um rodapé com uma div, uma lista com 3 itens com links para redes sociais e abaixo um <p></p> com o texto e código do símbolo de direitos reservados. */}
       </div>
     </>
-  );
+  )
 }
