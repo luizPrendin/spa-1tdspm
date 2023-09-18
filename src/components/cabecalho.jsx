@@ -3,7 +3,7 @@ import{AiOutlineHome as H} from"react-icons/ai"
 
 export default function Cabecalho() {
   return (
-    <header className="cabecalho">
+    <header>
           <h1>Vite  +  React</h1>
           
           <ul>
