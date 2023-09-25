@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+
+}
+.container{
+    margin-left: 20%;
+    margin-right: 20%;
+
+    & div{
+
+        & figure{
+            & img{
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            }
+        }
+        
+    }
+
+}
