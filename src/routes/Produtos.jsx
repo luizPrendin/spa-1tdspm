@@ -5,6 +5,7 @@ import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
 import style from "./Produtos.module.css";
 import { useEffect, useState } from "react";
 import ModalInserir from "../components/ModalInserir/ModalInserir";
+import "./Produtos.scss"
 
 export default function Produtos() {
 
@@ -34,7 +35,7 @@ export default function Produtos() {
 
       {open ?<ModalInserir open ={open} setOpen={setOpen}/>:""}
 
-      <button onClick={()=>setOpen(true)}>OPEN-MODAL</button>
+      <button onClick={()=>setOpen(true)}>Cadastrar Produto</button>
 
       <table className={style.tblEstilo} >
         <thead>
