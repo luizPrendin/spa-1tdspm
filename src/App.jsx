@@ -1,6 +1,6 @@
 
 import { Outlet } from "react-router-dom";
-import Cabecalho from "./components/Cabecalho";
+import Cabecalho from "./components/Cabecalho/cabecalho";
 import Rodape from "./components/Rodape";
 import styles from "./App.module.css"
 

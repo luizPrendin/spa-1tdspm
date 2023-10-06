@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
 import{AiOutlineHome as H} from "react-icons/ai"
+import "./Cabecalho.scss"
+
 
 export default function Cabecalho() {
   return (
-    <header>
-          <h1>Vite  +  React</h1>
+    <header className="cabecalho">
+          
           
           <ul>
             <li>
